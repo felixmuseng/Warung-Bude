@@ -62,7 +62,7 @@ void AddDish()
 	}while(quantityTemp < 1 || quantityTemp > 999);
 
     pushNodeDish(addDish(nameTemp, priceTemp, quantityTemp));
-    n++;
+    No++;
     printf("The dish has been added!\n");
     printf("Press enter to continue...\n");
     getchar();
