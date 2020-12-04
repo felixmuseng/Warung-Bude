@@ -7,7 +7,8 @@ struct dish
 
 struct order
 {
-    struct dish Dish;
+    int quantity, price;
+    char name[255];
 };
 
 struct customer
@@ -31,9 +32,9 @@ struct NodeCustomer
 {
     struct customer Customer;
     NodeCustomer *prev, *next;
-    NodeOrder *headOrder, *tailOrder;
+    NodeOrder *headOrder, *tailOrder, *currOrder;;
 }*headCustomer[26], *tailCustomer[26], *currCustomer;
 
 void main_menu();
-int n = 1,totalCustomer = 0;
-int maxname,maxprice,maxpricewidth,maxnowidth;
+int No = 1,totalCustomer = 0,totalOrder = 0;
+int maxname,maxprice,maxpricewidth,maxnowidth,width;

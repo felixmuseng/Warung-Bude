@@ -7,6 +7,8 @@
 #include "RemoveDish.cpp"
 #include "AddCustomer.cpp"
 #include "SearchCustomer.cpp"
+#include "ViewWarteg.cpp"
+#include "Order.cpp"
 
 const char* detectOS() 
 {
@@ -25,6 +27,28 @@ const char* detectOS()
     #else
     return "Other";
     #endif
+}
+
+void printlogo()
+{
+    system("cls || clear");
+    char text[255];
+    FILE *fp = fopen("splash-screen.txt", "r");
+    while(fscanf(fp, "%[^\n]%*c", text) != EOF)
+    {
+        printf("%s\n", text);
+    }
+    fclose(fp);
+}
+
+void exit_page()
+{
+    system("cls || clear");
+    printf("Please expand your terminal to full screen!\n");
+    printf("Press enter to continue...\n");
+    getchar();
+    getchar();
+    printlogo();
 }
 
 void welcome_page()
@@ -74,16 +98,16 @@ void main_menu()
             SearchCustomer();
             break;
         case 5:
-            return;
+            ViewWarteg();
             break;
         case 6:
-        	return;
+        	Order();
             break;
         case 7:
-            return;
+            return;//ga kuat lagi saya bang dh ngantuk, kalo sabar coming soon besok bang
             break;
         case 8:
-            return;
+            exit_page();
             break;
         }
     } while (input < 1 || input > 8);
