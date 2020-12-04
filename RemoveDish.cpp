@@ -84,7 +84,7 @@ int calculateWidth()
             maxprice /= 10;
         } while(maxprice != 0);
 
-        int notemp = No;
+        int notemp = n;
         do
         {
             maxnowidth++;
@@ -98,13 +98,13 @@ int calculateWidth()
 
 void heading()
 {
-    width = calculateWidth();
+    int width = calculateWidth();
     for(int i = 0;i < ((width/2)); i++)
     {
         printf(" ");
     }
     printf("Bude's Menu\n");
-    for(int i = 0;i < (width+5); i++)
+    for(int i = 0;i < (width+8); i++)
     {
         printf("=");
     }
@@ -127,6 +127,11 @@ void heading()
         printf(" ");
     }
     printf("\n");
+    for(int i = 0;i < (width+8); i++)
+    {
+        printf("=");
+    }
+    printf("\n");
 }
 
 void printdishtable()
@@ -136,15 +141,11 @@ void printdishtable()
     int i = 1;
     while (currDish)
     {
-        printf("%-*d.  %-*s %03d      Rp%-*d\n",maxnowidth,i,maxname,currDish->Dish.name,currDish->Dish.quantity,maxpricewidth,currDish->Dish.price);
+        printf("%-*d. %-*s %03d      Rp%-*d\n",maxnowidth+1,i,maxname,currDish->Dish.name,currDish->Dish.quantity,maxpricewidth,currDish->Dish.price);
 		i++;
         currDish = currDish->next;
     }
-    for(int i = 0;i < (width+5); i++)
-    {
-        printf("=");
-    }
-    printf("\n");
+
 }
 
 void RemoveDish()

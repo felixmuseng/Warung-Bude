@@ -7,8 +7,7 @@ int CustomerPresent(char *name)
 			currCustomer = headCustomer[i];
 			while(currCustomer)
 			{
-				if(strcmp(currCustomer->Customer.name, name) == 0)
-				{
+				if(strcmp(currCustomer->Customer.name, name) == 0){
 					return 1;
 				}
 				currCustomer = currCustomer->next;
